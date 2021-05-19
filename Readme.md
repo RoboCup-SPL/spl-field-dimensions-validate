@@ -4,7 +4,7 @@ This program is used to validate the `field_dimension.json` files used by the Ro
 
 Give `field-validate.py` a list of files on the commandline and it will check all files whether they follow the schema defined by the SPL rules.
 
-This files needs Python 3 to run. No other libraries are needed.
+This program needs Python 3 to run. No other libraries or dependencies are required.
 
 # Status
 
