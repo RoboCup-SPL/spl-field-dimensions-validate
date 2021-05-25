@@ -21,7 +21,7 @@
 					"minimum": 0.01,
 					"maximum": 5
 				},
-				"penaltyMarkerSize": {
+				"penaltyCrossSize": {
 					"type": "number",
 					"minimum": 0.01,
 					"maximum": 5
@@ -55,14 +55,9 @@
 					"type": "number",
 					"minimum": 0.3,
 					"maximum": 10
-				},
-				"borderStripWidth": {
-					"type": "number",
-					"minimum": 0.1,
-					"maximum": 1000
 				}
 			},
-			"required": ["length", "width", "lineWidth", "penaltyMarkerSize", "penaltyAreaLength", "penaltyAreaWidth", "penaltyCrossDistance", "centerCircleDiameter", "borderStripWidth"]
+			"required": ["length", "width", "lineWidth", "penaltyCrossSize", "penaltyAreaLength", "penaltyAreaWidth", "penaltyCrossDistance", "centerCircleDiameter"]
 		},
 		"goal": {
 			"type": "object",
