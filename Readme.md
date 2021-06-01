@@ -10,6 +10,10 @@ This program needs Python 3 to run. No other libraries or dependencies are requi
 
 This program uses a [JSON Schema](https://json-schema.org/understanding-json-schema/) to auto-generate validation code. The schema can be found in `generate-validator`. To auto-generate the validation code Python 3 and the Python-dependencies from `requirements.txt` are needed.
 
+# Standard field
+
+In `tests` you find JSON files describing a field constructed to the standard dimensions of the SPL rules.
+
 # Status
 
 Experimental
