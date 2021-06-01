@@ -13,7 +13,3 @@ This program uses a [JSON Schema](https://json-schema.org/understanding-json-sch
 # Standard field
 
 In `tests` you find JSON files describing a field constructed to the standard dimensions of the SPL rules.
-
-# Status
-
-Experimental
