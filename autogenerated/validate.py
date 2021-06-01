@@ -20,8 +20,8 @@ def validate_https___spl_robocup_org_2021_field_dimensions_schema_json(data):
             data__field_is_dict = isinstance(data__field, dict)
             if data__field_is_dict:
                 data__field_len = len(data__field)
-                if not all(prop in data__field for prop in ['length', 'width', 'lineWidth', 'penaltyCrossSize', 'penaltyAreaLength', 'penaltyAreaWidth', 'penaltyCrossDistance', 'centerCircleDiameter']):
-                    raise ValueError("data.field must contain ['length', 'width', 'lineWidth', 'penaltyCrossSize', 'penaltyAreaLength', 'penaltyAreaWidth', 'penaltyCrossDistance', 'centerCircleDiameter'] properties")
+                if not all(prop in data__field for prop in ['length', 'width', 'penaltyCrossSize', 'penaltyAreaLength', 'penaltyAreaWidth', 'penaltyCrossDistance', 'centerCircleDiameter', 'borderStripWidth']):
+                    raise ValueError("data.field must contain ['length', 'width', 'penaltyCrossSize', 'penaltyAreaLength', 'penaltyAreaWidth', 'penaltyCrossDistance', 'centerCircleDiameter', 'borderStripWidth'] properties")
                 data__field_keys = set(data__field.keys())
                 if "length" in data__field_keys:
                     data__field_keys.remove("length")
@@ -43,16 +43,6 @@ def validate_https___spl_robocup_org_2021_field_dimensions_schema_json(data):
                             raise ValueError("data.field.width must be bigger than or equal to 3")
                         if data__field__width > 20:
                             raise ValueError("data.field.width must be smaller than or equal to 20")
-                if "lineWidth" in data__field_keys:
-                    data__field_keys.remove("lineWidth")
-                    data__field__lineWidth = data__field["lineWidth"]
-                    if not isinstance(data__field__lineWidth, (int, float)) or isinstance(data__field__lineWidth, bool):
-                        raise ValueError("data.field.lineWidth must be number")
-                    if isinstance(data__field__lineWidth, (int, float)):
-                        if data__field__lineWidth < 0.01:
-                            raise ValueError("data.field.lineWidth must be bigger than or equal to 0.01")
-                        if data__field__lineWidth > 5:
-                            raise ValueError("data.field.lineWidth must be smaller than or equal to 5")
                 if "penaltyCrossSize" in data__field_keys:
                     data__field_keys.remove("penaltyCrossSize")
                     data__field__penaltyCrossSize = data__field["penaltyCrossSize"]
@@ -123,6 +113,16 @@ def validate_https___spl_robocup_org_2021_field_dimensions_schema_json(data):
                             raise ValueError("data.field.centerCircleDiameter must be bigger than or equal to 0.3")
                         if data__field__centerCircleDiameter > 10:
                             raise ValueError("data.field.centerCircleDiameter must be smaller than or equal to 10")
+                if "borderStripWidth" in data__field_keys:
+                    data__field_keys.remove("borderStripWidth")
+                    data__field__borderStripWidth = data__field["borderStripWidth"]
+                    if not isinstance(data__field__borderStripWidth, (int, float)) or isinstance(data__field__borderStripWidth, bool):
+                        raise ValueError("data.field.borderStripWidth must be number")
+                    if isinstance(data__field__borderStripWidth, (int, float)):
+                        if data__field__borderStripWidth < 0.2:
+                            raise ValueError("data.field.borderStripWidth must be bigger than or equal to 0.2")
+                        if data__field__borderStripWidth > 2:
+                            raise ValueError("data.field.borderStripWidth must be smaller than or equal to 2")
         if "goal" in data_keys:
             data_keys.remove("goal")
             data__goal = data["goal"]
