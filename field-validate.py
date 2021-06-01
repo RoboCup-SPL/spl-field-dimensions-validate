@@ -22,7 +22,7 @@ def main() -> None:
         field_definitions = field_dimensions["field"]
 
         if ("goalBoxAreaLength" in field_definitions) != ("goalBoxAreaWidth" in field_definitions):
-            print('Error: field needs to contain both or "goalBoxAreaLength" and "goalBoxAreaWidth", or none of them. Exiting.', file=sys.stderr)
+            print('Error: field needs to contain both of "goalBoxAreaLength" and "goalBoxAreaWidth", or none of them. Exiting.', file=sys.stderr)
             sys.exit(1)
 
     print('All files valid. Done.')
