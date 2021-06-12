@@ -25,7 +25,6 @@ def main() -> None:
             print('Error: Found a JSON Schema violation in file {0} . Printing exception and Exiting.'.format(filename), file=sys.stderr)
             raise ಠ_ಠ
 
-
         field_definitions = field_dimensions["field"]
 
         if ("goalBoxAreaLength" in field_definitions) != ("goalBoxAreaWidth" in field_definitions):
