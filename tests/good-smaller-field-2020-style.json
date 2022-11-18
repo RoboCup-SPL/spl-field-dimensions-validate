@@ -2,9 +2,10 @@
     "field": {
         "length": 7.5,
         "width": 5,
+        "lineWidth": 0.05,
         "penaltyCrossSize": 0.1,
-        "goalBoxAreaLength": 0.5,
-        "goalBoxAreaWidth": 2.1,
+        "goalAreaLength": 0.5,
+        "goalAreaWidth": 2.1,
         "penaltyAreaLength": 1.65,
         "penaltyAreaWidth": 3,
         "penaltyCrossDistance": 1.3,

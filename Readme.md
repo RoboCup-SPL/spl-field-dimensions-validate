@@ -1,6 +1,6 @@
 # RoboCup SPL Field Dimensions Validator
 
-This program is used to validate the `field_dimension.json` files used by the [RoboCup SPL](https://spl.robocup.org/) in 2021.
+This repository defines an exchange format for the dimensions of a soccer field in the [RoboCup SPL](https://spl.robocup.org/) and contains a program to validate files in that format.
 
 Give `field-validate.py` a list of files on the commandline and it will check all files whether they follow the schema defined by the SPL rules.
 

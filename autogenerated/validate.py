@@ -1,9 +1,9 @@
-VERSION = "2.15.1"
+VERSION = "2.16.2"
 
 
 NoneType = type(None)
 
-def validate_https___spl_robocup_org_2021_field_dimensions_schema_json(data):
+def validate_https___spl_robocup_org_2022_field_dimensions_schema_json(data):
     if not isinstance(data, (dict)):
         raise ValueError("data must be object")
     data_is_dict = isinstance(data, dict)
@@ -20,8 +20,8 @@ def validate_https___spl_robocup_org_2021_field_dimensions_schema_json(data):
             data__field_is_dict = isinstance(data__field, dict)
             if data__field_is_dict:
                 data__field_len = len(data__field)
-                if not all(prop in data__field for prop in ['length', 'width', 'penaltyCrossSize', 'penaltyAreaLength', 'penaltyAreaWidth', 'penaltyCrossDistance', 'centerCircleDiameter', 'borderStripWidth']):
-                    raise ValueError("data.field must contain ['length', 'width', 'penaltyCrossSize', 'penaltyAreaLength', 'penaltyAreaWidth', 'penaltyCrossDistance', 'centerCircleDiameter', 'borderStripWidth'] properties")
+                if not all(prop in data__field for prop in ['length', 'width', 'lineWidth', 'penaltyCrossSize', 'penaltyAreaLength', 'penaltyAreaWidth', 'penaltyCrossDistance', 'centerCircleDiameter', 'borderStripWidth']):
+                    raise ValueError("data.field must contain ['length', 'width', 'lineWidth', 'penaltyCrossSize', 'penaltyAreaLength', 'penaltyAreaWidth', 'penaltyCrossDistance', 'centerCircleDiameter', 'borderStripWidth'] properties")
                 data__field_keys = set(data__field.keys())
                 if "length" in data__field_keys:
                     data__field_keys.remove("length")
@@ -43,6 +43,16 @@ def validate_https___spl_robocup_org_2021_field_dimensions_schema_json(data):
                             raise ValueError("data.field.width must be bigger than or equal to 3")
                         if data__field__width > 20:
                             raise ValueError("data.field.width must be smaller than or equal to 20")
+                if "lineWidth" in data__field_keys:
+                    data__field_keys.remove("lineWidth")
+                    data__field__lineWidth = data__field["lineWidth"]
+                    if not isinstance(data__field__lineWidth, (int, float)) or isinstance(data__field__lineWidth, bool):
+                        raise ValueError("data.field.lineWidth must be number")
+                    if isinstance(data__field__lineWidth, (int, float)):
+                        if data__field__lineWidth < 0.05:
+                            raise ValueError("data.field.lineWidth must be bigger than or equal to 0.05")
+                        if data__field__lineWidth > 0.05:
+                            raise ValueError("data.field.lineWidth must be smaller than or equal to 0.05")
                 if "penaltyCrossSize" in data__field_keys:
                     data__field_keys.remove("penaltyCrossSize")
                     data__field__penaltyCrossSize = data__field["penaltyCrossSize"]
@@ -53,26 +63,26 @@ def validate_https___spl_robocup_org_2021_field_dimensions_schema_json(data):
                             raise ValueError("data.field.penaltyCrossSize must be bigger than or equal to 0.01")
                         if data__field__penaltyCrossSize > 5:
                             raise ValueError("data.field.penaltyCrossSize must be smaller than or equal to 5")
-                if "goalBoxAreaLength" in data__field_keys:
-                    data__field_keys.remove("goalBoxAreaLength")
-                    data__field__goalBoxAreaLength = data__field["goalBoxAreaLength"]
-                    if not isinstance(data__field__goalBoxAreaLength, (int, float)) or isinstance(data__field__goalBoxAreaLength, bool):
-                        raise ValueError("data.field.goalBoxAreaLength must be number")
-                    if isinstance(data__field__goalBoxAreaLength, (int, float)):
-                        if data__field__goalBoxAreaLength < 0.3:
-                            raise ValueError("data.field.goalBoxAreaLength must be bigger than or equal to 0.3")
-                        if data__field__goalBoxAreaLength > 10:
-                            raise ValueError("data.field.goalBoxAreaLength must be smaller than or equal to 10")
-                if "goalBoxAreaWidth" in data__field_keys:
-                    data__field_keys.remove("goalBoxAreaWidth")
-                    data__field__goalBoxAreaWidth = data__field["goalBoxAreaWidth"]
-                    if not isinstance(data__field__goalBoxAreaWidth, (int, float)) or isinstance(data__field__goalBoxAreaWidth, bool):
-                        raise ValueError("data.field.goalBoxAreaWidth must be number")
-                    if isinstance(data__field__goalBoxAreaWidth, (int, float)):
-                        if data__field__goalBoxAreaWidth < 1:
-                            raise ValueError("data.field.goalBoxAreaWidth must be bigger than or equal to 1")
-                        if data__field__goalBoxAreaWidth > 10:
-                            raise ValueError("data.field.goalBoxAreaWidth must be smaller than or equal to 10")
+                if "goalAreaLength" in data__field_keys:
+                    data__field_keys.remove("goalAreaLength")
+                    data__field__goalAreaLength = data__field["goalAreaLength"]
+                    if not isinstance(data__field__goalAreaLength, (int, float)) or isinstance(data__field__goalAreaLength, bool):
+                        raise ValueError("data.field.goalAreaLength must be number")
+                    if isinstance(data__field__goalAreaLength, (int, float)):
+                        if data__field__goalAreaLength < 0.3:
+                            raise ValueError("data.field.goalAreaLength must be bigger than or equal to 0.3")
+                        if data__field__goalAreaLength > 10:
+                            raise ValueError("data.field.goalAreaLength must be smaller than or equal to 10")
+                if "goalAreaWidth" in data__field_keys:
+                    data__field_keys.remove("goalAreaWidth")
+                    data__field__goalAreaWidth = data__field["goalAreaWidth"]
+                    if not isinstance(data__field__goalAreaWidth, (int, float)) or isinstance(data__field__goalAreaWidth, bool):
+                        raise ValueError("data.field.goalAreaWidth must be number")
+                    if isinstance(data__field__goalAreaWidth, (int, float)):
+                        if data__field__goalAreaWidth < 1:
+                            raise ValueError("data.field.goalAreaWidth must be bigger than or equal to 1")
+                        if data__field__goalAreaWidth > 10:
+                            raise ValueError("data.field.goalAreaWidth must be smaller than or equal to 10")
                 if "penaltyAreaLength" in data__field_keys:
                     data__field_keys.remove("penaltyAreaLength")
                     data__field__penaltyAreaLength = data__field["penaltyAreaLength"]

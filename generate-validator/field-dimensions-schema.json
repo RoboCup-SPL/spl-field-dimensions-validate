@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/schema#",
-	"$id": "https://spl.robocup.org/2021/field-dimensions-schema.json",
+	"$id": "https://spl.robocup.org/2022/field-dimensions-schema.json",
 	"type": "object",
 	"properties": {
 		"field": {
@@ -16,17 +16,22 @@
 					"minimum": 3,
 					"maximum": 20
 				},
+				"lineWidth": {
+					"type": "number",
+					"minimum": 0.05,
+					"maximum": 0.05
+				},
 				"penaltyCrossSize": {
 					"type": "number",
 					"minimum": 0.01,
 					"maximum": 5
 				},
-				"goalBoxAreaLength": {
+				"goalAreaLength": {
 					"type": "number",
 					"minimum": 0.3,
 					"maximum": 10
 				},
-				"goalBoxAreaWidth": {
+				"goalAreaWidth": {
 					"type": "number",
 					"minimum": 1,
 					"maximum": 10
@@ -57,7 +62,7 @@
 					"maximum": 2
 				}
 			},
-			"required": ["length", "width", "penaltyCrossSize", "penaltyAreaLength", "penaltyAreaWidth", "penaltyCrossDistance", "centerCircleDiameter", "borderStripWidth"]
+			"required": ["length", "width", "lineWidth", "penaltyCrossSize", "penaltyAreaLength", "penaltyAreaWidth", "penaltyCrossDistance", "centerCircleDiameter", "borderStripWidth"]
 		},
 		"goal": {
 			"type": "object",

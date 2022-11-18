@@ -2,6 +2,7 @@
     "field": {
         "length": 9.0,
         "width": 6.0,
+        "lineWidth": 0.05,
         "penaltyCrossSize": 0.1,
         "penaltyAreaLength": 0.6,
         "penaltyAreaWidth": 2.2,
