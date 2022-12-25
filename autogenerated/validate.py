@@ -20,8 +20,8 @@ def validate_https___spl_robocup_org_2022_field_dimensions_schema_json(data):
             data__field_is_dict = isinstance(data__field, dict)
             if data__field_is_dict:
                 data__field_len = len(data__field)
-                if not all(prop in data__field for prop in ['length', 'width', 'lineWidth', 'penaltyCrossSize', 'penaltyAreaLength', 'penaltyAreaWidth', 'penaltyCrossDistance', 'centerCircleDiameter', 'borderStripWidth']):
-                    raise ValueError("data.field must contain ['length', 'width', 'lineWidth', 'penaltyCrossSize', 'penaltyAreaLength', 'penaltyAreaWidth', 'penaltyCrossDistance', 'centerCircleDiameter', 'borderStripWidth'] properties")
+                if not all(prop in data__field for prop in ['length', 'width', 'lineWidth', 'penaltyMarkSize', 'penaltyAreaLength', 'penaltyAreaWidth', 'penaltyMarkDistance', 'centerCircleDiameter', 'borderStripWidth']):
+                    raise ValueError("data.field must contain ['length', 'width', 'lineWidth', 'penaltyMarkSize', 'penaltyAreaLength', 'penaltyAreaWidth', 'penaltyMarkDistance', 'centerCircleDiameter', 'borderStripWidth'] properties")
                 data__field_keys = set(data__field.keys())
                 if "length" in data__field_keys:
                     data__field_keys.remove("length")
@@ -53,16 +53,16 @@ def validate_https___spl_robocup_org_2022_field_dimensions_schema_json(data):
                             raise ValueError("data.field.lineWidth must be bigger than or equal to 0.05")
                         if data__field__lineWidth > 0.05:
                             raise ValueError("data.field.lineWidth must be smaller than or equal to 0.05")
-                if "penaltyCrossSize" in data__field_keys:
-                    data__field_keys.remove("penaltyCrossSize")
-                    data__field__penaltyCrossSize = data__field["penaltyCrossSize"]
-                    if not isinstance(data__field__penaltyCrossSize, (int, float)) or isinstance(data__field__penaltyCrossSize, bool):
-                        raise ValueError("data.field.penaltyCrossSize must be number")
-                    if isinstance(data__field__penaltyCrossSize, (int, float)):
-                        if data__field__penaltyCrossSize < 0.01:
-                            raise ValueError("data.field.penaltyCrossSize must be bigger than or equal to 0.01")
-                        if data__field__penaltyCrossSize > 5:
-                            raise ValueError("data.field.penaltyCrossSize must be smaller than or equal to 5")
+                if "penaltyMarkSize" in data__field_keys:
+                    data__field_keys.remove("penaltyMarkSize")
+                    data__field__penaltyMarkSize = data__field["penaltyMarkSize"]
+                    if not isinstance(data__field__penaltyMarkSize, (int, float)) or isinstance(data__field__penaltyMarkSize, bool):
+                        raise ValueError("data.field.penaltyMarkSize must be number")
+                    if isinstance(data__field__penaltyMarkSize, (int, float)):
+                        if data__field__penaltyMarkSize < 0.01:
+                            raise ValueError("data.field.penaltyMarkSize must be bigger than or equal to 0.01")
+                        if data__field__penaltyMarkSize > 5:
+                            raise ValueError("data.field.penaltyMarkSize must be smaller than or equal to 5")
                 if "goalAreaLength" in data__field_keys:
                     data__field_keys.remove("goalAreaLength")
                     data__field__goalAreaLength = data__field["goalAreaLength"]
@@ -103,16 +103,16 @@ def validate_https___spl_robocup_org_2022_field_dimensions_schema_json(data):
                             raise ValueError("data.field.penaltyAreaWidth must be bigger than or equal to 1")
                         if data__field__penaltyAreaWidth > 10:
                             raise ValueError("data.field.penaltyAreaWidth must be smaller than or equal to 10")
-                if "penaltyCrossDistance" in data__field_keys:
-                    data__field_keys.remove("penaltyCrossDistance")
-                    data__field__penaltyCrossDistance = data__field["penaltyCrossDistance"]
-                    if not isinstance(data__field__penaltyCrossDistance, (int, float)) or isinstance(data__field__penaltyCrossDistance, bool):
-                        raise ValueError("data.field.penaltyCrossDistance must be number")
-                    if isinstance(data__field__penaltyCrossDistance, (int, float)):
-                        if data__field__penaltyCrossDistance < 0.3:
-                            raise ValueError("data.field.penaltyCrossDistance must be bigger than or equal to 0.3")
-                        if data__field__penaltyCrossDistance > 10:
-                            raise ValueError("data.field.penaltyCrossDistance must be smaller than or equal to 10")
+                if "penaltyMarkDistance" in data__field_keys:
+                    data__field_keys.remove("penaltyMarkDistance")
+                    data__field__penaltyMarkDistance = data__field["penaltyMarkDistance"]
+                    if not isinstance(data__field__penaltyMarkDistance, (int, float)) or isinstance(data__field__penaltyMarkDistance, bool):
+                        raise ValueError("data.field.penaltyMarkDistance must be number")
+                    if isinstance(data__field__penaltyMarkDistance, (int, float)):
+                        if data__field__penaltyMarkDistance < 0.3:
+                            raise ValueError("data.field.penaltyMarkDistance must be bigger than or equal to 0.3")
+                        if data__field__penaltyMarkDistance > 10:
+                            raise ValueError("data.field.penaltyMarkDistance must be smaller than or equal to 10")
                 if "centerCircleDiameter" in data__field_keys:
                     data__field_keys.remove("centerCircleDiameter")
                     data__field__centerCircleDiameter = data__field["centerCircleDiameter"]
